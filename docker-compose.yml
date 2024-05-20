@@ -1,20 +1,18 @@
-version: '3'
+version: latest
 services:
   database:
     build:
       context: ./database
-      dockerfile: Dockerfile-db
+      dockerfile: Dockerfile-database
     environment:
       - PGDATA=/data
       - POSTGRES_PASSWORD=12345
-    volumes:
-      - ./sql_script.sql:/docker-entrypoint-initdb.d/database/volume
     ports:
-      - "9000:9000"
+      - "9000:5432"
   app:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile-app
     ports:
       - "8000:8000"
     depends_on:
