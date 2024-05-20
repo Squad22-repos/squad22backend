@@ -1,0 +1,5 @@
+# Created at 2024-05-15T22:33:54.115
+Boot Manifest-JAR contains absolute paths in classpath 'D:\OneDrive\Documentos\GitHub\Squad22\Squad22Backend\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+
