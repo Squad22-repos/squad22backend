@@ -55,9 +55,9 @@ public class PostController {
         return new ResponseEntity<>(post, HttpStatus.OK);
     }
 
-    @GetMapping("/usuario/{id}")
-    public ResponseEntity<List<Post>> getAllUserPosts(@PathVariable String id) {
-        User user = this.userRepository.findById(id).orElseThrow();
+    @GetMapping("/usuario/{username}")
+    public ResponseEntity<List<Post>> getAllUserPosts(@PathVariable String username) {
+        User user = (User) this.userRepository.findUserByUsername(username);
         List<Post> posts = this.postRepository.findByUser(user);
         return new ResponseEntity<>(posts, HttpStatus.OK);
     }
