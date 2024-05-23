@@ -3,7 +3,7 @@ services:
   database:
     build:
       context: ./database
-      dockerfile: Dockerfile-database
+      dockerfile: database/Dockerfile
     environment:
       - PGDATA=/data
       - POSTGRES_PASSWORD=12345
@@ -12,7 +12,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile-app
+      dockerfile: Dockerfile
     ports:
       - "8000:8000"
     depends_on:
